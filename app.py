@@ -7,13 +7,13 @@ from PIL import Image
 def initialize_model(api_key):
     genai.configure(api_key=api_key)
     generation_config = {
-        "temperature": 1,
+        "temperature": 0.2,
         "top_p": 0.95,
         "top_k": 64,
         "max_output_tokens": 8192,
     }
     return genai.GenerativeModel(
-        model_name="gemini-pro",
+        model_name="gemini-2.0-flash",
         generation_config=generation_config,
     )
 
